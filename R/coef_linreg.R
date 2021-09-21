@@ -16,3 +16,5 @@ coef.linreg <- function(object, ...) {
 }
 
 
+# CINSDSADSADASDASDBHASD GJKASHMDASB HJDMAS dbjkahda
+# TEST INGSDFSDBHJSAD
