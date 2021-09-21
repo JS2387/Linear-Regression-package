@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #' @title Generic Method for plot()
 #'
 #' @param x object containing model data to be used for plotting
