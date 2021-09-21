@@ -12,7 +12,7 @@ summary <- function(object, ...) UseMethod("summary")
 #' @export
 summary.linreg <- function(object, ...) {
                           summary_result <- data.frame(object$Regressioncoeff,
-                                                            object$Residuals,
+                                                            object$VarofRC,
                                                             object$tvals,
                                                             object$p_vals)
                           print(summary_result)
