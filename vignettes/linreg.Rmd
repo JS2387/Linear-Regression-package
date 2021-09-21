@@ -6,13 +6,78 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
+```{r, echo = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", message = FALSE)
+```
 # linreg package for R
 
 ## Introduction
 
-This package has been built to fit linear models by running regression using least squares.
+This package has been built to fit linear models by running regression using least squares. The package code is designed to work with popular data sets such as 'iris'. This vignette will document different examples to showcase how this package can be used.
 
-```{r setup}
+### linreg()
+
+The most important function around which this package is built is the linreg() function. It takes 2 inputs - formula and data containing the independent and dependent variables for modelling. Note that the input for formula is a formula data type.
+
+```{r setup, eval= TRUE}
 library(Group8LinearRegressionFJ)
+data("iris")
+model <- linreg(Petal.Length ~ Species, iris)
 ```
+
+*The output of the linreg() function is stored in an object of **linreg** data type*
+
+-------------
+
+## Output Methods
+
+Given that the output of linreg() is stored in a new s3 class, the package includes various functions with linreg methods that will help the user evaluate the results of linear modelling. Next we explore each of these methods.
+
+### print()
+
+The print() method takes the object of class linreg where the output of the modelling is stored. It prints out the coefficients and coefficient names along with the call.
+
+```{r}
+print(model)
+```
+
+### plot()
+
+The plot() generates 2 plots for the model
+
+```{r fig, fig.height = 5, fig.width = 5, fig.align = "center", message=FALSE, warning=FALSE}
+plot(model)
+```
+
+### resid()
+
+The resid() displays the vector of the residuals in the model
+
+```{r}
+resid(model)
+```
+
+### pred()
+
+The pred() returns the predicted values in the model
+
+```{r}
+pred(model)
+```
+
+### coef()
+
+The coef() returns the coefficients in the model as a **named vector**
+
+```{r}
+coef(model)
+```
+
+### summary()
+
+The summary() displays the most important statistic results of the model i.e. *coefficients, standard error, t-values, p-values, variance of coefficients and the degrees of freedom in the model*
+
+```{r}
+summary(model)
+```
+

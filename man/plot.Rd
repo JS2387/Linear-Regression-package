@@ -10,6 +10,8 @@ plot(x, y, ...)
 \item{x}{object containing model data to be used for plotting}
 
 \item{y}{the y coordinates for plotting}
+
+\item{...}{other parameters for plotting}
 }
 \description{
 Generic Method for plot()

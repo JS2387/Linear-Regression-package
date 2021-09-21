@@ -26,6 +26,9 @@ linreg <- function(formula, data) {
   # The variables
   vars <- all.vars(formula)
 
+  #fml for printing
+  fml <- match.call()
+
   # The Y values
   y <- data[, vars[1]]
 
@@ -63,7 +66,7 @@ linreg <- function(formula, data) {
   p_vals <- pt(betas, degrees_freedom)
 
   #store the result of the regression in 'linreg' class object
-  Reg_result <- list(Call = formula,
+  Reg_result <- list(Call = fml,
                     Regressioncoeff = betas,
                     Fittedvalues = y_hat,
                     Residuals = error_hat,

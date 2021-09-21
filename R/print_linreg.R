@@ -14,8 +14,6 @@ print.linreg <- function(x, ...) {
     if (is.null(x$Call)) stop("Model not defined")
     if (is.null(x$Regressioncoeff)) stop("Coefficients missing")
 
-    cat("Call:", "\n", "linreg(formula = ", as.character(x$Call)[2], as.character(x$Call)[1], as.character(x$Call)[3], ")", "\n", "\n",
-        "Coefficients: ", "\n", "\n",
-        unclass(t(x$Regressioncoeff)))
+    cat(x$Call, "\n", "Coefficients: ", "\n", "\n", unclass(t(x$Regressioncoeff)))
 
 }

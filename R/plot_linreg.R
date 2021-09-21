@@ -2,6 +2,7 @@
 #'
 #' @param x object containing model data to be used for plotting
 #' @param y the y coordinates for plotting
+#' @param ... other parameters for plotting
 #'
 #' @import  ggplot2
 #'
@@ -12,8 +13,9 @@ plot <- function (x, y, ...) UseMethod("plot")
 #'
 #' @param x object containing model data to be used for plotting
 #' @param y the y coordinates for plotting
+#' @param ... other parameters for plotting
 #'
-#' @import  ggplot2
+#' @import  ggplot2 stats
 #'
 #' @export
 plot.linreg <- function (x, y, ...) {
@@ -38,7 +40,8 @@ plot.linreg <- function (x, y, ...) {
                             theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
                                   panel.background = element_blank(), axis.line = element_line(colour = "black")) +
                             theme(plot.margin=unit(c(2,2,2.5,1.2),"cm"))
-                          plot_res_vs_fitted
+
+                          #return(plot_res_vs_fitted)
 
                           # SECOND PLOT THING SCALE LOCATION
 
@@ -65,7 +68,9 @@ plot.linreg <- function (x, y, ...) {
                                   panel.background = element_blank(), axis.line = element_line(colour = "black")) +
                             theme(plot.margin=unit(c(2,2,2.5,1.2),"cm"))
 
-                          plot_scale_location
+                          list(plot_res_vs_fitted, plot_scale_location)
+
+                          #return(plot_scale_location)
 
 }
 
