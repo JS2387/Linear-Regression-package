@@ -20,6 +20,8 @@ plot <- function (x, y, ...) UseMethod("plot")
 #' @export
 plot.linreg <- function (x, y, ...) {
                         # Create the DF used for plotting
+                        library(latex2exp)
+                        library(ggplot2)
                         error_hat <- x$Residuals
                         y_hat <- x$Fittedvalues
                         df_1 <- data.frame(error_hat , y_hat)

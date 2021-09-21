@@ -21,12 +21,7 @@
 #' @export linreg
 #'
 #'
-install.packages('latex2exp')
-library(latex2exp)
-install.packages('methods')
 library(methods)
-install.packages('ggplot2')
-library(ggplot2)
 
 #writing the linreg() function
 
