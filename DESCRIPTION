@@ -1,12 +1,13 @@
 Package: Group8LinearRegressionFJ
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Runs regression and fits linear models
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: c(
+  person("Jaskirat", "Marar", email = "jasma356@student.liu.se", role = c("aut","cre")),
+  person("Filip", "Berndtsson", email = filbe354@student.liu.se, role = "aut"))
+Maintainer: Jaskirat Marar <jasma356@student.liu.se>, Filip Berndtsson <filbe354@student.liu.se>
+Description: Takes a formula input and a data set to run a regression and return the output as a linreg object type. Also contains methods for varios functions to view the output concisely.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
