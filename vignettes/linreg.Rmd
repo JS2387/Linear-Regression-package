@@ -1,0 +1,18 @@
+---
+title: "linreg"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{linreg}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# linreg package for R
+
+## Introduction
+
+This package has been built to fit linear models by running regression using least squares.
+
+```{r setup}
+library(Group8LinearRegressionFJ)
+```

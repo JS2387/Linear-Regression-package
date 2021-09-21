@@ -5,7 +5,7 @@
 #'
 #' @importFrom ggplot2
 #'             latex2exp
-#'
+NULL
 #' @export
 plot <- function (x, y, ...) UseMethod("plot")
 
@@ -14,14 +14,12 @@ plot <- function (x, y, ...) UseMethod("plot")
 #' @param x object containing model data to be used for plotting
 #' @param y the y coordinates for plotting
 #'
-#' @importFrom ggplot2
-#'             latex2exp
+#' @importFrom ggplot2 latex2exp
+NULL
 #'
 #' @export
 plot.linreg <- function (x, y, ...) {
                         # Create the DF used for plotting
-                        library(latex2exp)
-                        library(ggplot2)
                         error_hat <- x$Residuals
                         y_hat <- x$Fittedvalues
                         df_1 <- data.frame(error_hat , y_hat)

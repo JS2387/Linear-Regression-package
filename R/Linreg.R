@@ -16,15 +16,9 @@
 #'
 #' @exportClass linreg
 #'
-#' @importFrom methods
-#'
 #' @export linreg
 #'
 #'
-library(methods)
-
-#writing the linreg() function
-
 linreg <- function(formula, data) {
 
   # Create the matrix
