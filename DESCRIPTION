@@ -12,6 +12,12 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Suggests: 
+<<<<<<< HEAD
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+=======
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: ggplot2, methods , latex2exp
+>>>>>>> 1c851c0e44f83313b135416c555bf56923781afa
