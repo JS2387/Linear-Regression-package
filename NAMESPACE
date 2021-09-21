@@ -14,9 +14,4 @@ export(print)
 export(resid)
 export(summary)
 exportClasses(linreg)
-<<<<<<< HEAD
-importFrom(ggplot2,latex2exp)
-=======
-importFrom(ggplot2)
-importFrom(methods)
->>>>>>> 1c851c0e44f83313b135416c555bf56923781afa
+import(ggplot2)
