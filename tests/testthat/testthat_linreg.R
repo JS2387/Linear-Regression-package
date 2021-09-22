@@ -9,7 +9,7 @@ test_that("lenreg rejects errounous input", {
 })
 
 # linreg <- lm
-#
+
 
 test_that("class is correct", {
   linreg_mod <- linreg(Petal.Length~Sepal.Width+Sepal.Length, data=iris)

@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{input of the class \code{linreg}}
+
+\item{...}{other inputs to be printed}
 }
 \description{
 linreg method for print()

@@ -1,24 +1,13 @@
 #' @title Linear Regression
-#'
 #' @description Runs a simple linear regression over a formula and data set
-#'
-#' @usage
-#' linreg(formula, data)
-#'
+#' @usage linreg(formula, data)
 #' @param formula object of class \code{formula}
 #' @param data a data table or \code{data.frame} containing the variables of the model
-#'
 #' @return returns an object of \code{class linreg}, which contains all the regression outputs and mimics a list
-#'
 #' @examples
 #' linreg(Petal.Length ~ Species, iris)
 #' linreg(speed ~ dist, cars)
-#'
-#' @exportClass linreg
-#'
-#' @export linreg
-#'
-#'
+#' @export
 linreg <- function(formula, data) {
 
   # Create the matrix
@@ -40,7 +29,7 @@ linreg <- function(formula, data) {
   R = qr.R(qr(mm))
 
   # Get the Beta estimations
-  betas <-solve(R) %*% t(Q) %*% y
+  betas <- solve(R) %*% t(Q) %*% y
 
   # Get the Yhat values
   y_hat <- mm %*% betas
@@ -57,7 +46,7 @@ linreg <- function(formula, data) {
   # Calculate Var(Beta^hat)
   QR <- qr(mm)
   r <- QR$rank
-  var_beta_hat <- diag(chol2inv(QR$qr, QR$rank) *as.vector(res_variance))
+  var_beta_hat <-  diag(( as.vector(res_variance) * solve(t(mm) %*% mm) ) / degrees_freedom )
 
   # Calculate the T-values for each Coefficient
   t_beta <- betas / sqrt(var_beta_hat)
@@ -76,7 +65,7 @@ linreg <- function(formula, data) {
                     tvals = t_beta,
                     p_vals = p_vals)
 
-  class(Reg_result) <- "linreg"
 
-  return(Reg_result)
+  return(class_constructor(Reg_result))
   }
+

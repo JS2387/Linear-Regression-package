@@ -1,22 +1,15 @@
 #' @title Generic Method for plot()
-#'
 #' @param x object containing model data to be used for plotting
 #' @param y the y coordinates for plotting
 #' @param ... other parameters for plotting
-#'
 #' @import  ggplot2
-#'
-#'
 #' @export
 plot <- function (x, y, ...) UseMethod("plot")
 #' @title linreg Method for plot()
-#'
 #' @param x object containing model data to be used for plotting
 #' @param y the y coordinates for plotting
 #' @param ... other parameters for plotting
-#'
 #' @import  ggplot2 stats
-#'
 #' @export
 plot.linreg <- function (x, y, ...) {
                           # Create the DF used for plotting

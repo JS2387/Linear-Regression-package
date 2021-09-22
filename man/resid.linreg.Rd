@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{object}{input of the class \code{linreg} containing model data}
+
+\item{...}{other inputs to the resid function}
 }
 \description{
 linreg method for resid()

@@ -8,6 +8,8 @@ resid(object, ...)
 }
 \arguments{
 \item{object}{input containing model data}
+
+\item{...}{other inputs to the resid function}
 }
 \description{
 Generic Method for resid()

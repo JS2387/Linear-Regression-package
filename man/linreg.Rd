@@ -20,5 +20,4 @@ Runs a simple linear regression over a formula and data set
 \examples{
 linreg(Petal.Length ~ Species, iris)
 linreg(speed ~ dist, cars)
-
 }

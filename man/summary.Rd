@@ -8,6 +8,8 @@ summary(object, ...)
 }
 \arguments{
 \item{object}{input containing model data}
+
+\item{...}{other inputs to summary function}
 }
 \description{
 Generic Method for summary()

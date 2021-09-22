@@ -7,7 +7,9 @@
 print(x, ...)
 }
 \arguments{
-\item{x}{input to be printed}
+\item{x}{input to be printed of the class linreg}
+
+\item{...}{other inputs to be printed}
 }
 \description{
 Generic Method for print()
