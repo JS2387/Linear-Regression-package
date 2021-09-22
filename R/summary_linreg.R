@@ -9,14 +9,19 @@ summary <- function(object, ...) UseMethod("summary")
 #' @param ... other inputs to summary function
 #' @export
 summary.linreg <- function(object, ...) {
-                          summary_result <- data.frame(object$Regressioncoeff,
-                                                            object$VarofRC,
-                                                            object$tvals,
-                                                            object$p_vals,
-                                                            "***")
+                          summary_result <- data.frame(round(object$Regressioncoeff,5),
+                                                            round(sqrt(diag(object$VarofRC)),5),
+                                                            round(object$tvals,5),
+                                                            round(object$p_vals,5),
+                                                            sapply(object$p_vals,
+                                                                    function(x) if(x < 0.001) {"***"}
+                                                                    else if (x < 0.01) {"**"}
+                                                                    else if (x < 0.05) {"*"}
+                                                                    else if (x < 0.1) {"."}
+                                                                    else {" "})
+                                                      )
                           colnames(summary_result) <- c("Estimate", "Std. Error", "t value", "p value","")
                           cat("Coefficients: \n")
                           print(summary_result)
-                          cat("\n Degrees of Freedom: ", object$DegFreedom)
-                          cat("\n Residual Variance: ", object$ResidualVar)
+                          cat("\nResidual standard error:", sqrt(object$ResidualVar), "on", object$DegFreedom, "degrees of freedom")
 }

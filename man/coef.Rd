@@ -8,6 +8,8 @@ coef(object, ...)
 }
 \arguments{
 \item{object}{input containing model data}
+
+\item{...}{additional input to the coef function}
 }
 \description{
 Generic Method for coef()

@@ -8,6 +8,8 @@ pred(object, ...)
 }
 \arguments{
 \item{object}{input containing model data}
+
+\item{...}{additional input to pred function}
 }
 \description{
 Generic Method for pred()

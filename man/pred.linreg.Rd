@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{object}{input of the class \code{linreg} containing model data}
+
+\item{...}{additional input to pred function}
 }
 \description{
 linreg method for pred()

@@ -38,21 +38,19 @@ linreg <- function(formula, data) {
   error_hat <- y - y_hat
 
   #Calculate the degrees of freedom for further calculations
-  degrees_freedom <- length(y) - (dim(mm)[2] - 1)
+  degrees_freedom <- nrow(mm) - ncol(mm)
 
   #Calculate the Sigma^2_hat
-  res_variance <-  (t(error_hat ) %*% error_hat) / degrees_freedom
+  res_variance <-  as.numeric(t(error_hat ) %*% error_hat) / degrees_freedom
 
   # Calculate Var(Beta^hat)
-  QR <- qr(mm)
-  r <- QR$rank
-  var_beta_hat <-  diag(( as.vector(res_variance) * solve(t(mm) %*% mm) ) / degrees_freedom )
+  var_beta_hat <-  res_variance * solve(t(mm) %*% mm)
 
   # Calculate the T-values for each Coefficient
-  t_beta <- betas / sqrt(var_beta_hat)
+  t_beta <- betas / sqrt(diag(var_beta_hat))
 
   #Calculate the p-values for each regression coefficient
-  p_vals <- pt(betas, degrees_freedom)
+  p_vals <- pt(-abs(t_beta), degrees_freedom)
 
   #store the result of the regression in 'linreg' class object
   Reg_result <- list(Call = fml,
