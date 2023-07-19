@@ -1,5 +1,6 @@
-# Group8LinearRegressionFJ
-This package is for the evaluation of Lab4 in the Advanced R course @ LiU.
+# Linear Regression Package for R
+
+This package is made for the evaluation of Lab4 in the Advanced R course @ LiU.
 
 The creators and authors of this package are Jaskirat Marar (jasma356) & Filip Berndtsson(filbe354).
 
